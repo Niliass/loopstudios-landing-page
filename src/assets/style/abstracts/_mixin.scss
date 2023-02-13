@@ -1,0 +1,43 @@
+@use "./variables" as *;
+@use "./breakpoints" as *;
+
+@mixin flex($just, $align, $dir) {
+  display: flex;
+  justify-content: $just;
+  align-items: $align;
+  flex-direction: $dir;
+}
+@mixin trans {
+  transition: 0.25s;
+}
+@mixin media($wd) {
+  @media (min-width: $wd) {
+    @content;
+  }
+}
+@mixin overlay($bg) {
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: $bg;
+    z-index: 1;
+    @content;
+  }
+}
+@mixin underline {
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 5px;
+    width: 0;
+    background: white;
+    @include trans;
+    @content;
+  }
+  &:hover::before {
+    width: 30%;
+  }
+}

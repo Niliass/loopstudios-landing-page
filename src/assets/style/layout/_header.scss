@@ -1,0 +1,87 @@
+@use "../abstracts" as *;
+
+header {
+  position: absolute;
+  width: 100%;
+  margin-top: 2.5rem;
+  z-index: 1;
+  .container {
+    @include flex(space-between, center, null);
+  }
+  .logo,
+  .nav__icon {
+    display: grid;
+  }
+  .logo {
+    width: 140px;
+    img {
+      width: 100%;
+    }
+  }
+  .nav__icon {
+    color: $white;
+    font-size: 1.5rem;
+    @include media($md) {
+      display: none;
+    }
+  }
+  .nav {
+    &__links {
+      @include flex(center, null, column);
+      position: absolute;
+      top: -2.5rem;
+      left: 0;
+      background: black;
+      width: 100%;
+      height: 100vh;
+      padding: 25px;
+      z-index: -1;
+      opacity: 0;
+      visibility: hidden;
+      @include trans;
+      &--active {
+        opacity: 1;
+        visibility: visible;
+      }
+      @include media($md) {
+        opacity: 1;
+        visibility: visible;
+        position: static;
+        height: fit-content;
+        flex-direction: row;
+        padding: 0;
+        background: none;
+      }
+    }
+    &__link {
+      display: block;
+      position: relative;
+      font: {
+        family: $font-jose;
+        size: 1.5rem;
+      }
+      text-transform: uppercase;
+      color: $white;
+      padding: 1rem 0;
+      @include media($sm) {
+        text-align: center;
+      }
+      @include media($md) {
+        font: {
+          size: 1.2rem;
+          family: $font-alata;
+        }
+        text-transform: capitalize;
+        padding: 0.8rem 1rem;
+      }
+      @include underline {
+        border-radius: 0 10px 10px 0;
+        @include media($sm) {
+          border-radius: 10px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+}

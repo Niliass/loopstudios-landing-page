@@ -1,0 +1,82 @@
+@use "../abstracts" as *;
+
+footer {
+  background-color: $black;
+  padding-block: 3rem;
+  margin-top: clamp(5rem, 8vw, 8rem);
+  %flex {
+    @include flex(null, center, column);
+  }
+  .container {
+    @extend %flex;
+    gap: 3rem;
+    text-align: center;
+    @include media($md) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  .#{&}__container {
+    @extend %flex;
+    gap: 1rem;
+    @include media($md) {
+      &:first-child {
+        align-items: flex-start;
+      }
+      &:last-child {
+        align-items: flex-end;
+        text-align: right;
+      }
+    }
+  }
+  @include media($md) {
+    nav {
+      margin-left: -1.2rem;
+    }
+  }
+  .nav__links {
+    @include flex(null, center, column);
+    @include media($md) {
+      flex-direction: row;
+    }
+  }
+  %underline {
+    @include underline {
+      border-radius: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  .nav__link {
+    display: block;
+    color: $white;
+    font: {
+      family: $font-alata;
+      size: 1.1rem;
+    }
+    padding: 0.7rem;
+    width: 80px;
+    position: relative;
+    @extend %underline;
+  }
+  .social__media {
+    display: flex;
+    gap: 1.5rem;
+    a {
+      position: relative;
+      color: $white;
+      font-size: 1.5rem;
+      padding: 0.5rem;
+      @extend %underline;
+      &:hover::before {
+        width: 50%;
+      }
+    }
+  }
+  .rights {
+    font: {
+      family: $font-alata;
+    }
+    color: $v-d-gray;
+  }
+}

@@ -1,0 +1,43 @@
+@use "../abstracts" as *;
+
+.intro {
+  &__desc {
+    font: {
+      family: $font-jose;
+      size: clamp(2.5rem, 8vw, 4rem);
+    }
+    color: $white;
+    text-transform: uppercase;
+    padding: 1.5rem;
+    line-height: 1;
+    border: 2px solid $white;
+    @include media($md) {
+      max-width: 70%;
+    }
+    @include media($lg) {
+      max-width: 50%;
+    }
+  }
+}
+.interactive {
+  position: relative;
+  margin-top: 5rem;
+  @include media($md) {
+    margin-top: 10rem;
+  }
+  &__img {
+    display: grid;
+    @include media($sm) {
+      max-width: 500px;
+    }
+    @include media($lg) {
+      max-width: 50vw;
+    }
+    img {
+      width: 100%;
+    }
+    &--desk {
+      display: none;
+    }
+  }
+}

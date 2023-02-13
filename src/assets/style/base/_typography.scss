@@ -1,0 +1,48 @@
+@use "../abstracts" as *;
+
+.interactive {
+  &__info {
+    text-align: center;
+    margin-top: 3rem;
+    padding-inline: 1rem;
+    @include media($sm) {
+      position: absolute;
+      bottom: -2px;
+      right: 0;
+      width: 50vw;
+      min-width: 440px;
+      background: $white;
+      padding: {
+        top: clamp(2rem, 5vw, 9rem);
+        left: clamp(2rem, 5.6vw, 9rem);
+      }
+      margin: 0 auto;
+      text-align: left;
+    }
+    @include media($md) {
+    }
+  }
+  &__title {
+    font: {
+      family: $font-jose;
+      size: clamp(1.7rem, 3.5vw, 3rem);
+    }
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  &__desc {
+    font: {
+      family: $font-alata;
+    }
+    max-width: 450px;
+    color: $d-gray;
+    margin-top: 1rem;
+    line-height: 1.5;
+    margin-inline: auto;
+    @include media($md) {
+      margin-inline: 0;
+      margin-top: 2rem;
+      font-size: 1.1rem;
+    }
+  }
+}
