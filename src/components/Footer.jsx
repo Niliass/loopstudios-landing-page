@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "../assets/images/logo.svg";
 
 function Footer() {
   return (
@@ -7,7 +6,7 @@ function Footer() {
       <div className="container">
         <div className="footer__container">
           <a href="#">
-            <img src={logo} alt="logo footer" />
+            <img src="/images/logo.svg" alt="logo footer" />
           </a>
           <nav>
             <ul className="nav__links">

@@ -1,6 +1,4 @@
 import React from "react";
-import interDesk from "../assets/images/interactive/interactive-desk.jpg";
-import interMob from "../assets/images/interactive/interactive-mob.jpg";
 
 function Inderactive() {
   return (
@@ -8,12 +6,12 @@ function Inderactive() {
       <div className="container">
         <div className="interactive__img">
           <img
-            src={interDesk}
+            src="/images/interactive/interactive-desk.jpg"
             alt="interactive image"
             className="interactive__img--desk"
           />
           <img
-            src={interMob}
+            src="/images/interactive/interactive-mob.jpg"
             alt="interactive image"
             className="interactive__img--mob"
           />

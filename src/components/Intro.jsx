@@ -1,6 +1,4 @@
 import React from "react";
-import deskImg from "../assets/images/intro/intro-desk.jpg";
-import mobImg from "../assets/images/intro/intro-desk.jpg";
 
 function intro() {
   return (
@@ -11,8 +9,16 @@ function intro() {
         </p>
       </div>
       <div className="intro__bk">
-        <img className="intro__deskbk" src={deskImg} alt="background intro" />
-        <img src={mobImg} alt="background intro" className="intro__mobbk" />
+        <img
+          className="intro__deskbk"
+          src="/images/intro/intro-desk.jpg"
+          alt="background intro"
+        />
+        <img
+          src="/images/intro/intro-mob.jpg"
+          alt="background intro"
+          className="intro__mobbk"
+        />
       </div>
     </div>
   );

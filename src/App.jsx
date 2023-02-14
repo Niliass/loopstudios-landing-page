@@ -3,7 +3,6 @@ import Intro from "./components/Intro";
 import Interactive from "./components/Interactive";
 import Creations from "./components/Creations";
 import Footer from "./components/Footer";
-
 function App() {
   return (
     <div className="App">

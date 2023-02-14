@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import logo from "../assets/images/logo.svg";
 
 function Header() {
   const [state, setState] = useState(false);
@@ -10,7 +9,7 @@ function Header() {
     <header>
       <div className="container">
         <a href="/" className="logo">
-          <img src={logo} alt="logo" />
+          <img src="/images/logo.svg" alt="logo" />
         </a>
         <nav>
           <button className="nav__icon" onClick={handleNav}>
